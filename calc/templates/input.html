@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="calc">
+
+        {%extends 'base.html' %}
+
+        {%block content%}
+        ENTER FIRST NUMBER : <input type="number" name="val1"><br><br>
+        ENTER SECOND NUMBER : <input type="number" name="val2"><br><br>
+        ENTER THE OPERATION [<b> + , - , * , / </b>] : <input type="text" name="operator"><br><br>
+        <input type="submit" value="SUBMIT QUERY"><br><br>
+
+        <h1>Result is ::: {{res}}</h1>
+
+        {%endblock %}
+    </form>
+</body>
+
+</html>
