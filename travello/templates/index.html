@@ -1,5 +1,4 @@
-{% load static %}
-
+{% load static %} {% static "images" as baseUrl%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +89,7 @@
 			</div>
 			<div class="menu_content">
 				<ul>
-					<li><a href="inex.html">Home</a></li>
+					<li><a href="index.html">Home</a></li>
 					<li><a href="about.html">About us</a></li>
 					<li><a href="#">Services</a></li>
 					<li><a href="news.html">News</a></li>
@@ -307,104 +306,26 @@
 				<div class="row destinations_row">
 					<div class="col">
 						<div class="destinations_container item_grid">
-							<!-- Destination -->
-							<div class="destination item">
-								<div class="destination_image">
-									<img src="/static/images/destination_1.jpg" alt="" />
-									<div class="spec_offer text-center">
-										<a href="#">Special Offer</a>
-									</div>
-								</div>
-								<div class="destination_content">
-									<div class="destination_title">
-										<a href="destinations.html">Bali</a>
-									</div>
-									<div class="destination_subtitle">
-										<p>Nulla pretium tincidunt felis, nec.</p>
-									</div>
-									<div class="destination_price">From $679</div>
-								</div>
-							</div>
 
+							{%for des in dest %}
 							<!-- Destination -->
 							<div class="destination item">
 								<div class="destination_image">
-									<img src="/static/images/destination_2.jpg" alt="" />
-								</div>
-								<div class="destination_content">
-									<div class="destination_title">
-										<a href="destinations.html">Indonesia</a>
-									</div>
-									<div class="destination_subtitle">
-										<p>Nulla pretium tincidunt felis, nec.</p>
-									</div>
-									<div class="destination_price">From $679</div>
-								</div>
-							</div>
+									<!-- As we canot use Jinja in the jinja we we write the url of the images in this way -->
 
-							<!-- Destination -->
-							<div class="destination item">
-								<div class="destination_image">
-									<img src="{% static 'images/destination_3.jpg' %}" alt="" />
+									<img src="{{baseUrl}}/{{des.img}}" alt="" />
 								</div>
 								<div class="destination_content">
 									<div class="destination_title">
-										<a href="destinations.html">San Francisco</a>
+										<a href="destinations.html">{{des.name}}</a>
 									</div>
 									<div class="destination_subtitle">
-										<p>Nulla pretium tincidunt felis, nec.</p>
+										<p>{{des.desc}}</p>
 									</div>
-									<div class="destination_price">From $679</div>
+									<div class="destination_price">From ${{des.price}}</div>
 								</div>
 							</div>
-
-							<!-- Destination -->
-							<div class="destination item">
-								<div class="destination_image">
-									<img src="/static/images/destination_4.jpg" alt="" />
-								</div>
-								<div class="destination_content">
-									<div class="destination_title">
-										<a href="destinations.html">Paris</a>
-									</div>
-									<div class="destination_subtitle">
-										<p>Nulla pretium tincidunt felis, nec.</p>
-									</div>
-									<div class="destination_price">From $679</div>
-								</div>
-							</div>
-
-							<!-- Destination -->
-							<div class="destination item">
-								<div class="destination_image">
-									<img src="/static/images/destination_5.jpg" alt="" />
-								</div>
-								<div class="destination_content">
-									<div class="destination_title">
-										<a href="destinations.html">Phi Phi Island</a>
-									</div>
-									<div class="destination_subtitle">
-										<p>Nulla pretium tincidunt felis, nec.</p>
-									</div>
-									<div class="destination_price">From $679</div>
-								</div>
-							</div>
-
-							<!-- Destination -->
-							<div class="destination item">
-								<div class="destination_image">
-									<img src="/static/images/destination_6.jpg" alt="" />
-								</div>
-								<div class="destination_content">
-									<div class="destination_title">
-										<a href="destinations.html">Mykonos</a>
-									</div>
-									<div class="destination_subtitle">
-										<p>Nulla pretium tincidunt felis, nec.</p>
-									</div>
-									<div class="destination_price">From $679</div>
-								</div>
-							</div>
+							{% endfor %}
 						</div>
 					</div>
 				</div>
@@ -413,9 +334,10 @@
 
 		<!-- Testimonials -->
 
-		<div class="testimonials" id="testimonials">
-			<div class="parallax_background parallax-window" data-parallax="scroll"
-				data-image-src="/static/images/testimonials.jpg" data-speed="0.8"></div>
+		<div class="testimonials" id="testimonials" style="background-color: rgb(16, 9, 69)">
+			<div class="parallax_background parallax-window" data-parallax="scroll" <!--
+				data-image-src="{% static 'static/images/testimonials.jpg' %}" data-speed="0.8"></div>
+			-->
 			<div class="container">
 				<div class="row">
 					<div class="col text-center">
