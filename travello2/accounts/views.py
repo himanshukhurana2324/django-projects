@@ -22,7 +22,7 @@ def register(request):
             elif User.objects.filter(email=email).exists():
                 messages.info(request,"email exists")
                 return redirect('register')
-            hjhjelse:
+            else:
                 user = User.objects.create_user(username= username, password= password, email= email,first_name=name)
                 user.save();
                
