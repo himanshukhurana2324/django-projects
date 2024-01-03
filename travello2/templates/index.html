@@ -29,17 +29,15 @@
 			<div class="container">
 				<div class="row">
 					<div class="col">
-						<div
-							class="header_content d-flex flex-row align-items-center justify-content-start">
-							<div
-								class="header_content_inner d-flex flex-row align-items-end justify-content-start">
+						<div class="header_content d-flex flex-row align-items-center justify-content-start">
+							<div class="header_content_inner d-flex flex-row align-items-end justify-content-start">
 								<div class="logo"><a href="index.html">Travello</a></div>
 								<nav class="main_nav">
-									<ul
-										class="d-flex flex-row align-items-start justify-content-start">
+									<ul class="d-flex flex-row align-items-start justify-content-start">
 										<li class="active"><a href="index.html">Home</a></li>
 										<li><a href="contact.html">Contacts</a></li>
 										<li><a href="accounts/register">Register</a></li>
+										<li><a href="accounts/login">Login</a></li>
 									</ul>
 								</nav>
 								<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
@@ -124,14 +122,14 @@
 							<form action="#" class="home_search_form" id="home_search_form">
 								<div
 									class="d-flex flex-lg-row flex-column align-items-start justify-content-lg-between justify-content-start">
-									<input type="text" class="search_input search_input_1"
-										placeholder="City" required="required">
-									<input type="text" class="search_input search_input_2"
-										placeholder="Departure" required="required">
-									<input type="text" class="search_input search_input_3"
-										placeholder="Arrival" required="required">
-									<input type="text" class="search_input search_input_4"
-										placeholder="Budget" required="required">
+									<input type="text" class="search_input search_input_1" placeholder="City"
+										required="required">
+									<input type="text" class="search_input search_input_2" placeholder="Departure"
+										required="required">
+									<input type="text" class="search_input search_input_3" placeholder="Arrival"
+										required="required">
+									<input type="text" class="search_input search_input_4" placeholder="Budget"
+										required="required">
 									<button class="home_search_button">search</button>
 								</div>
 							</form>
@@ -154,10 +152,8 @@
 
 							<!-- Intro Item -->
 							<div class="col-lg-4 intro_col">
-								<div
-									class="intro_item d-flex flex-row align-items-end justify-content-start">
-									<div class="intro_icon"><img src="/static/images/beach.svg"
-											alt=""></div>
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="/static/images/beach.svg" alt=""></div>
 									<div class="intro_content">
 										<div class="intro_title">Top Destinations</div>
 										<div class="intro_subtitle">
@@ -169,10 +165,8 @@
 
 							<!-- Intro Item -->
 							<div class="col-lg-4 intro_col">
-								<div
-									class="intro_item d-flex flex-row align-items-end justify-content-start">
-									<div class="intro_icon"><img src="/static/images/wallet.svg"
-											alt=""></div>
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="/static/images/wallet.svg" alt=""></div>
 									<div class="intro_content">
 										<div class="intro_title">The Best Prices</div>
 										<div class="intro_subtitle">
@@ -184,10 +178,8 @@
 
 							<!-- Intro Item -->
 							<div class="col-lg-4 intro_col">
-								<div
-									class="intro_item d-flex flex-row align-items-end justify-content-start">
-									<div class="intro_icon"><img src="/static/images/suitcase.svg"
-											alt=""></div>
+								<div class="intro_item d-flex flex-row align-items-end justify-content-start">
+									<div class="intro_icon"><img src="/static/images/suitcase.svg" alt=""></div>
 									<div class="intro_content">
 										<div class="intro_title">Amazing Services</div>
 										<div class="intro_subtitle">
@@ -225,14 +217,16 @@
 						<!-- Destination -->
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="/static/images/{{x.img}}" alt="">
+
+								<!-- using the img.url we can fetch any image from the database -->
+
+								<img src="{{x.img.url}}" alt="">
 								{%if x.offer %}
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 								{% endif %}
 							</div>
 							<div class="destination_content">
-								<div class="destination_title"><a
-										href="destinations.html">{{x.name}}</a></div>
+								<div class="destination_title"><a href="destinations.html">{{x.name}}</a></div>
 								<div class="destination_subtitle">
 									<p>{{x.desc}}</p>
 								</div>
@@ -341,13 +335,11 @@
 					<div class="news_container">
 
 						<!-- News Post -->
-						<div
-							class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
 							<div class="news_post_image"><img src="/static/images/news_1.jpg" alt="">
 							</div>
 							<div class="news_post_content">
-								<div
-									class="news_post_date d-flex flex-row align-items-end justify-content-start">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
 									<div>02</div>
 									<div>june</div>
 								</div>
@@ -367,13 +359,11 @@
 						</div>
 
 						<!-- News Post -->
-						<div
-							class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
 							<div class="news_post_image"><img src="/static/images/news_2.jpg" alt="">
 							</div>
 							<div class="news_post_content">
-								<div
-									class="news_post_date d-flex flex-row align-items-end justify-content-start">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
 									<div>01</div>
 									<div>june</div>
 								</div>
@@ -393,13 +383,11 @@
 						</div>
 
 						<!-- News Post -->
-						<div
-							class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
+						<div class="news_post d-flex flex-md-row flex-column align-items-start justify-content-start">
 							<div class="news_post_image"><img src="/static/images/news_3.jpg" alt="">
 							</div>
 							<div class="news_post_content">
-								<div
-									class="news_post_date d-flex flex-row align-items-end justify-content-start">
+								<div class="news_post_date d-flex flex-row align-items-end justify-content-start">
 									<div>29</div>
 									<div>may</div>
 								</div>
@@ -424,8 +412,7 @@
 				<!-- News Sidebar -->
 				<div class="col-xl-4">
 					<div class="travello">
-						<div class="background_image"
-							style="background-image: url('/static/images/travello.jpg') ">
+						<div class="background_image" style="background-image: url('/static/images/travello.jpg') ">
 						</div>
 						<div class="travello_content">
 							<div class="travello_content_inner">
@@ -467,18 +454,13 @@
 							<form action="#"
 								class="newsletter_form d-flex flex-md-row flex-column align-items-start justify-content-between"
 								id="newsletter_form">
-								<div
-									class="d-flex flex-md-row flex-column align-items-start justify-content-between">
-									<div><input type="text"
-											class="newsletter_input newsletter_input_name"
-											id="newsletter_input_name" placeholder="Name"
-											required="required">
+								<div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
+									<div><input type="text" class="newsletter_input newsletter_input_name"
+											id="newsletter_input_name" placeholder="Name" required="required">
 										<div class="input_border"></div>
 									</div>
-									<div><input type="email"
-											class="newsletter_input newsletter_input_email"
-											id="newsletter_input_email" placeholder="Your e-mail"
-											required="required">
+									<div><input type="email" class="newsletter_input newsletter_input_email"
+											id="newsletter_input_email" placeholder="Your e-mail" required="required">
 										<div class="input_border"></div>
 									</div>
 								</div>
@@ -496,8 +478,7 @@
 						<div class="col-xl-4 footer_contact_col">
 							<div
 								class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="/static/images/sign.svg"
-										alt=""></div>
+								<div class="footer_contact_icon"><img src="/static/images/sign.svg" alt=""></div>
 								<div class="footer_contact_title">give us a call</div>
 								<div class="footer_contact_list">
 									<ul>
@@ -512,8 +493,7 @@
 						<div class="col-xl-4 footer_contact_col">
 							<div
 								class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="/static/images/trekking.svg"
-										alt="">
+								<div class="footer_contact_icon"><img src="/static/images/trekking.svg" alt="">
 								</div>
 								<div class="footer_contact_title">come & drop by</div>
 								<div class="footer_contact_list">
@@ -528,8 +508,7 @@
 						<div class="col-xl-4 footer_contact_col">
 							<div
 								class="footer_contact_item d-flex flex-column align-items-center justify-content-start text-center">
-								<div class="footer_contact_icon"><img src="/static/images/around.svg"
-										alt=""></div>
+								<div class="footer_contact_icon"><img src="/static/images/around.svg" alt=""></div>
 								<div class="footer_contact_title">send us a message</div>
 								<div class="footer_contact_list">
 									<ul>

@@ -27,4 +27,15 @@ urlpatterns = [
     path('accounts/', include('accounts.urls'))
 ]
 
+#      >>>>method 1:>>>>
+
+# urlpatterns = [
+   
+#     path('',include('home.urls')) ,
+#     path('admin/', admin.site.urls),
+#     path('accounts/', include('accounts.urls'))
+# ]+  static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
+
+
+#       >>>>method 2:>>>>
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
