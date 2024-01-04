@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User, auth
+from django.contrib.auth.models import User, auth 
+from django.contrib.auth import logout, login  
 from django.contrib import messages
 
 
@@ -48,7 +49,7 @@ def login(request):
         username = request.POST['username']
         password = request.POST['password']
 
-        user = auth.authenticate(username=username, password=password)      
+        user = auth.authenticate( username=username, password=password)      
 
         if user is not None:
             auth.login(request, user)
@@ -56,3 +57,9 @@ def login(request):
         else:
             messages.info(request, "invalid credentials")
             return redirect('login')
+        
+        # CREATING A LOGOUT FUNCTION FOR THE SITE
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')
