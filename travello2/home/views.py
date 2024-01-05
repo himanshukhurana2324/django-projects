@@ -6,6 +6,12 @@ from django.http import HttpResponse
 from .models import Destination
 
 def index(request):
+          # here we are fetching all the objects from the database and sending it to the html file
+  data = Destination.objects.all()
+ 
+  return render(request,'index.html', {'dest':data})
+  
+  
   # des1= Destination()
   # des1.name="Chandigarh"
   # des1.price="300"
@@ -28,10 +34,3 @@ def index(request):
   # des3.img="destination_3.jpg"
  
   # data=[des1, des2, des3]
-
-
-
-  # here we are fetching all the objects from the database and sending it to the html file
-  data = Destination.objects.all()
- 
-  return render(request,'index.html', {'dest':data})
